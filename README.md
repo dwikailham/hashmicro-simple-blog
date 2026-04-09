@@ -32,7 +32,8 @@ Pastikan perangkat Anda sudah terinstal:
    Buka aplikasi Terminal, Command Prompt, atau PowerShell Anda.
    ```bash
    # Masuk ke folder proyek
-   cd d:\Website\test\hashmicro
+   cd d:\Website\test\hashmicro-simple-blog
+
    ```
 
 2. **Instal Dependensi (Library):**
