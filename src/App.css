@@ -1,0 +1,271 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.hero-overlay {
+  flex: 1;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6));
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.hero-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.logo-text h1 {
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
+  font-weight: 700;
+}
+
+.logo-text span {
+  font-size: 0.9rem;
+  letter-spacing: 0.4rem;
+  opacity: 0.8;
+  font-weight: 300;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.editable-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.editable-content {
+  padding: 3rem 4rem;
+  text-align: center;
+  min-width: 300px;
+  max-width: 600px;
+  border-radius: 4px;
+  outline: none;
+  cursor: text;
+  transition: var(--transition);
+}
+
+.editable-content:focus {
+  border-color: rgba(255,255,255,0.5);
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.editable-content .category {
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  color: #ff9d00;
+}
+
+.editable-content .title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+}
+
+.editable-content .date {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* Sticky Navigation */
+.main-nav {
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 1rem 0;
+  transition: var(--transition);
+  z-index: 1000;
+  position: relative;
+}
+
+.main-nav.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #666;
+  letter-spacing: 0.05rem;
+}
+
+.nav-links a:hover {
+  color: #000;
+}
+
+.nav-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #999;
+  border-left: 1px solid #eee;
+  padding-left: 1.5rem;
+}
+
+.nav-search input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.8rem;
+  width: 150px;
+  font-style: italic;
+}
+
+/* Blog Grid */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 4rem 0;
+}
+
+.blog-post {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.post-image {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.post-overlay {
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.post-category {
+  font-size: 0.7rem;
+  letter-spacing: 0.15rem;
+  color: #ff9d00;
+  margin-bottom: 1rem;
+}
+
+.post-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.post-date {
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+/* Responsive */
+.mobile-menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 1.5rem 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    gap: 1.5rem;
+    align-items: center;
+    border-top: 1px solid #eee;
+  }
+
+  .nav-links.mobile-open {
+    display: flex;
+  }
+
+  
+  .logo-text h1 {
+    font-size: 1.8rem;
+  }
+  
+  .editable-content .title {
+    font-size: 1.5rem;
+  }
+  
+  .post-image {
+    height: 300px;
+  }
+}
